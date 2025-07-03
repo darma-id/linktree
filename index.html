@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darma'Bigail - Linktree</title>
+  <style>
+    /* === Background Animasi Neon === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      overflow-x: hidden;
+      position: relative;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: linear-gradient(45deg, #0ff, #f0f, #0ff, #f0f);
+      background-size: 400% 400%;
+      animation: neon-bg 10s linear infinite;
+      z-index: -1;
+      opacity: 0.06;
+    }
+
+    @keyframes neon-bg {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      margin: 20px 0 5px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #aaa;
+    }
+
+    .phone-number {
+      font-size: 16px;
+      color: #0f0;
+      margin: 10px 0;
+    }
+
+    .copy-btn {
+      background: #0f0;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: #0a0;
+    }
+
+    .link {
+      background-color: #111;
+      border: 1px solid #333;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      margin: 10px 0;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: block;
+      opacity: 0;
+      animation: fadeInLink 0.8s ease forwards;
+    }
+
+    .link:nth-of-type(n+1) { animation-delay: 0.2s; }
+
+    @keyframes fadeInLink {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(10px); }
+    }
+
+    .link:hover {
+      background-color: #222;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://cdn.discordapp.com/attachments/1191942871584088074/1257602736465084426/aku-gue.jpeg" alt="Foto Profil" class="profile-img" />
+    
+    <h1>Darma'Bigail</h1>
+    <p>Bot WhatsApp & Penjual Nomor Kosong</p>
+    
+    <p class="phone-number">📞 +62 882-9153-7320</p>
+    <button class="copy-btn" onclick="copyNumber()">Salin Nomor</button>
+
+    <a href="https://wa.me/message/A7JJYIQ47RHPO1" class="link">📱 WhatsApp Pribadi</a>
+    <a href="mailto:wangsad023@gmail.com" class="link">📧 Kirim Email</a>
+    <a href="https://chat.whatsapp.com/ISEc1P0aPd8Eu81DB8qpGV" class="link">👥 Grup WhatsApp</a>
+    <a href="https://whatsapp.com/channel/0029VbASDAv77qVRVUYXG00C" class="link">📢 Channel WhatsApp</a>
+    <a href="https://github.com" class="link">💻 GitHub</a>
+    <a href="#" class="link">🌐 Website Lain</a>
+
+    <footer>&copy; 2025 Darma'Bigail</footer>
+  </div>
+
+  <script>
+    function copyNumber() {
+      navigator.clipboard.writeText("+6288291537320").then(() => {
+        alert("✅ Nomor disalin: +62 882-9153-7320");
+      });
+    }
+  </script>
+
+</body>
+</html>
